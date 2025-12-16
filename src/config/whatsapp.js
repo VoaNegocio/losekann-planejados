@@ -1,5 +1,5 @@
 // Configuração centralizada do WhatsApp
-const WHATSAPP_NUMBER = '5511999999999' // Substituir pelo número real
+const WHATSAPP_NUMBER = '5511983792249'
 
 const MESSAGES = {
   hero: 'Olá! Gostaria de solicitar um orçamento personalizado.',
