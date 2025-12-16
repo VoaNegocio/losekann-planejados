@@ -1,0 +1,59 @@
+/* Importar fontes do Google Fonts - DEVE vir antes das diretivas @tailwind */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Reset e estilos globais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #1E1E1E; /* Preto/Chumbo da identidade */
+}
+
+/* Scroll suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Seleção de texto personalizada - Dourado da identidade */
+::selection {
+  background-color: rgba(204, 161, 71, 0.3); /* #CCA147 com opacidade */
+  color: inherit;
+}
+
+/* Variáveis CSS para cores da identidade */
+:root {
+  --losekann-dourado: #CCA147;
+  --losekann-preto: #1E1E1E;
+  --losekann-dourado-hover: #B8913F;
+  --losekann-preto-hover: #2A2A2A;
+}
+
+/* Tipografia para títulos - Poppins como alternativa ao Hurme Geometric Sans */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 700;
+  color: #1E1E1E;
+}
+
+/* Scrollbar hide para carrosséis horizontais */
+.scrollbar-hide {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari and Opera */
+}
+
