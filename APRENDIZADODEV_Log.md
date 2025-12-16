@@ -641,6 +641,264 @@ find src -name "*.jsx" -type f -exec sed -i '' 's/bg-linear-to-/bg-gradient-to-/
 
 ---
 
+# 🛋️ Projeto: Losekann Planejados
+
+## Sobre o Projeto
+
+Landing page premium desenvolvida para **Losekann Planejados**, empresa especializada em móveis planejados com 28 anos de tradição em Suzano - SP. O projeto foi criado com foco em conversão, direcionando visitantes para solicitação de orçamento e visita ao showroom físico.
+
+- **Objetivo da landing page:** Conversão via solicitação de orçamento e visita ao showroom
+- **Foco de conversão:** Orçamento personalizado + Visita ao showroom físico
+- **Nicho/segmento de mercado:** Móveis planejados sob medida (classe média/média-alta, região de Suzano)
+- **Localização:** Rua Sete de Setembro, 148 — Suzano/SP
+- **Tempo de mercado:** 28 anos de experiência
+
+## Conceito de Design
+
+### Nome do Conceito: "Confiança Tradicional"
+
+**Filosofia de Design:**
+- **Modernidade e objetividade**: Comunicação limpa, direta, sem exageros
+- **Sofisticação e leveza**: Visual elegante que transmite premium sem ser pesado
+- **Geometria e precisão**: Alinhado ao conceito de móveis "planejados" (engenharia/precisão)
+- **Autoridade pelo tempo**: 28 anos de experiência como diferencial principal
+- **Tangibilidade**: Projetos reais, ambientes prontos, resultados concretos
+- **Presença física**: Destaque para showroom físico como ancoragem de confiança
+
+### Paleta de Cores
+
+- **Dourado/Ouro (#CCA147)**: Cor primária - Transmite nobreza, elegância e sofisticação
+- **Preto/Chumbo (#1E1E1E)**: Cor secundária/base - Transmite seriedade, modernidade e autoridade
+- **Neutros**: Tons de cinza para textos de corpo e elementos secundários
+- **WhatsApp Green (#25D366)**: Para o botão de WhatsApp (destaque estratégico)
+
+### Tipografia
+
+- **Títulos e Headlines**: Poppins (Google Fonts) - Para transmitir modernidade e legibilidade
+- **Corpo de Texto e UI**: Inter (Google Fonts) - Para alta legibilidade e clareza
+
+## Estrutura da Landing Page
+
+1. **Header:** Navegação fixa com logo e links
+2. **Hero Section (Dobra 1):** Headline + Subheadline + CTA principal + Imagem
+3. **Autoridade (Dobra 2):** Mosaico de 6 projetos reais
+4. **Projetos (Dobra 3):** Galeria por ambiente (Dormitório, Cozinha, Banheiro)
+5. **Depoimentos (Dobra 4):** Cards de depoimentos de clientes
+6. **CTA Final (Dobra 5):** Chamada final com foto da fachada e mapa
+7. **Footer:** Informações complementares
+8. **WhatsApp Button:** Botão flutuante fixo
+
+## Tecnologias Utilizadas
+
+- **React 19.2.0:** Framework JavaScript
+- **Vite 7.2.4:** Build tool e dev server
+- **Tailwind CSS v3.4.17:** Framework CSS utility-first (versão estável)
+- **PostCSS 8.4.49:** Processador CSS para Tailwind
+- **Autoprefixer 10.4.20:** Adiciona prefixos de vendor automaticamente
+- **React Icons:** Biblioteca de ícones (Feather Icons)
+
+## Implementações Especiais
+
+### Implementação: Botão 3D Premium com Cores Douradas da Marca
+**Data:** Implementação do botão 3D premium adaptado para Losekann  
+**Objetivo:** Criar botões CTA com visual 3D real e efeitos persuasivos, usando as cores douradas da identidade visual (#CCA147)
+
+**Pensamento e Decisões:**
+
+#### 1. Adaptação do Design 3D para Cores Douradas
+**Decisão**: Adaptar o botão 3D premium documentado em projetos anteriores (Leli Morgado) para as cores douradas da Losekann porque:
+- Mantém a eficácia comprovada do design 3D
+- Alinha com a identidade visual (dourado #CCA147)
+- Cria consistência visual em toda a landing page
+- Efeito 3D aumenta engajamento e taxa de conversão
+
+#### 2. Visual 3D Real com Transform CSS
+**Decisão**: Implementar transform 3D CSS porque:
+- `perspective(1000px)` + `rotateX(-2deg)` cria ilusão de profundidade real
+- `transformStyle: 'preserve-3d'` mantém a perspectiva
+- Diferente de apenas sombras, cria sensação de objeto 3D no espaço
+
+**Código:**
+```css
+.btn-3d-premium {
+  transform-style: preserve-3d;
+  transition: all 200ms ease-out;
+}
+
+.btn-3d-premium:hover {
+  transform: perspective(1000px) rotateX(-2deg) translateY(-2px) scale(1.05);
+}
+```
+
+#### 3. Bordas 3D para Profundidade
+**Decisão**: Bordas diferenciadas (top claro, bottom escura) porque:
+- `border-top: 2px solid rgba(255, 255, 255, 0.4)` simula luz vinda de cima
+- `border-bottom: 1px solid rgba(255, 255, 255, 0.1)` simula sombra na parte inferior
+- Cria efeito de relevo e profundidade
+
+#### 4. Sombras Múltiplas Adaptadas para Dourado
+**Decisão**: Usar múltiplas sombras com cor dourada porque:
+- Sombra externa grande: `0 8px 32px rgba(204, 161, 71, 0.5)` - Glow dourado
+- Sombra média: `0 4px 16px rgba(204, 161, 71, 0.4)` - Profundidade
+- Sombra interna superior: `inset 0 1px 0 rgba(255, 255, 255, 0.3)` - Borda de luz
+- Sombra interna inferior: `inset 0 -1px 0 rgba(0, 0, 0, 0.2)` - Borda de sombra
+- Cada camada contribui para sensação de profundidade
+
+**Código CSS:**
+```css
+.btn-3d-premium {
+  box-shadow: 
+    0 8px 32px rgba(204, 161, 71, 0.5),  /* Glow dourado externo grande */
+    0 4px 16px rgba(204, 161, 71, 0.4),  /* Profundidade base */
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),  /* Borda de luz superior */
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);  /* Borda de sombra inferior */
+}
+```
+
+#### 5. Active State Suave para Empurrar
+**Decisão**: `active:scale-[0.96]` + `active:translate-y-[2px]` porque:
+- `scale-[0.96]` comprime o botão 4% (suficiente para feedback visual)
+- `translate-y-[2px]` move para baixo simulando pressão física
+- `duration-200` transição rápida para resposta imediata
+- Sombras diminuem no active para parecer que botão se aproximou da superfície
+
+**Código:**
+```css
+.btn-3d-premium:active {
+  transform: perspective(1000px) rotateX(-1deg) translateY(2px) scale(0.96);
+  box-shadow: 
+    0 4px 16px rgba(204, 161, 71, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+```
+
+#### 6. Hover Aprimorado com Elevação
+**Decisão**: `hover:-translate-y-0.5` + rotação 3D porque:
+- Elevação sutil (`-translate-y-0.5`) faz botão "flutuar" antes do clique
+- Rotação 3D (`rotateX(-2deg)`) adiciona dinamismo
+- Sombras aumentam no hover para reforçar elevação
+- Feedback visual claro de interatividade
+
+#### 7. Animações Preservadas e Adicionadas
+**Decisão**: Combinar animações existentes com efeitos 3D porque:
+- `animate-pulse-slow` no botão principal - atenção contínua
+- `animate-shimmer` no shimmer effect - brilho que atravessa
+- `animate-pulse blur-2xl` no glow effect - brilho pulsante dourado
+- Efeitos 3D adicionam profundidade sem competir com animações
+
+### Implementação do Código
+
+#### Classe CSS Reutilizável
+**Arquivo:** `src/index.css`
+
+```css
+/* Botão 3D Premium - Efeito Persuasivo */
+.btn-3d-premium {
+  /* Sombras múltiplas para profundidade 3D */
+  box-shadow: 
+    0 8px 32px rgba(204, 161, 71, 0.5),  /* Glow dourado externo grande */
+    0 4px 16px rgba(204, 161, 71, 0.4),  /* Profundidade base */
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),  /* Borda de luz superior */
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);  /* Borda de sombra inferior */
+  
+  /* Bordas 3D */
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Transform 3D */
+  transform-style: preserve-3d;
+  transition: all 200ms ease-out;
+}
+
+.btn-3d-premium:hover {
+  /* Elevação e rotação 3D no hover */
+  transform: perspective(1000px) rotateX(-2deg) translateY(-2px) scale(1.05);
+  
+  /* Sombras aumentadas no hover */
+  box-shadow: 
+    0 12px 48px rgba(204, 161, 71, 0.6),
+    0 6px 24px rgba(204, 161, 71, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d-premium:active {
+  /* Compressão e movimento para baixo no active */
+  transform: perspective(1000px) rotateX(-1deg) translateY(2px) scale(0.96);
+  
+  /* Sombras reduzidas no active */
+  box-shadow: 
+    0 4px 16px rgba(204, 161, 71, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+```
+
+#### Uso nos Componentes
+**Exemplo:** `src/components/Hero.jsx`
+
+```jsx
+<button
+  onClick={handleCTAClick}
+  className="group btn-3d-premium inline-flex items-center gap-3 bg-losekann-dourado hover:bg-losekann-dourado-hover text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-semibold text-base md:text-lg relative overflow-hidden animate-pulse-slow"
+>
+  {/* Shimmer effect */}
+  <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 animate-shimmer"></span>
+  {/* Glow effect */}
+  <span className="absolute inset-0 bg-gradient-to-r from-losekann-dourado/0 via-losekann-dourado/50 to-losekann-dourado/0 opacity-60 group-hover:opacity-100 transition-opacity duration-500 blur-2xl animate-pulse"></span>
+  <FiArrowRight className="relative z-10 w-5 h-5" />
+  <span className="relative z-10">Solicitar orçamento personalizado</span>
+</button>
+```
+
+### Funcionalidades Implementadas
+
+✅ **Visual 3D real** com `perspective(1000px)` + `rotateX(-2deg)`  
+✅ **Bordas 3D** (top claro, bottom escura)  
+✅ **Sombras múltiplas** (4 camadas: externa grande, externa média, interna superior, interna inferior) com cor dourada (#CCA147)  
+✅ **Active state suave** (`scale-[0.96]` + `translate-y-[2px]`)  
+✅ **Hover com elevação** (`-translate-y-0.5` + rotação 3D)  
+✅ **Animações preservadas** (pulse-slow, shimmer, glow)  
+✅ **Classe reutilizável** (`.btn-3d-premium`) aplicada em todos os CTAs principais  
+✅ **Transições rápidas** (`duration-200`) para feedback imediato  
+✅ **Cores da marca** (dourado #CCA147) aplicadas consistentemente  
+
+### Componentes Atualizados
+
+- ✅ **Hero.jsx** (Desktop e Mobile)
+- ✅ **Depoimentos.jsx**
+- ✅ **CTAFinal.jsx**
+- ✅ **Projetos.jsx** (link discreto - sem botão 3D, apenas cor dourada)
+
+### Diferenças em Relação à Implementação Anterior (Leli Morgado)
+
+| Aspecto | Leli Morgado (Verde) | Losekann (Dourado) |
+|---------|---------------------|-------------------|
+| **Cor principal** | Verde (#25D366) | Dourado (#CCA147) |
+| **Glow colorido** | Verde | Dourado |
+| **Classe CSS** | Inline no componente | Classe reutilizável `.btn-3d-premium` |
+| **Aplicação** | Apenas CTA Final | Todos os CTAs principais |
+| **Ícones** | Emoji 👉 | React Icons (FiArrowRight) |
+
+### Lições Aprendidas
+
+1. **Classe reutilizável é melhor**: Criar `.btn-3d-premium` facilita manutenção e consistência
+2. **Cores adaptáveis**: O mesmo design 3D funciona com qualquer cor da marca
+3. **Sombras com cor da marca**: Glow colorido (dourado) cria identidade visual forte
+4. **Ícones > Emojis**: React Icons são mais profissionais e consistentes
+5. **Múltiplas camadas de sombra**: Cada camada adiciona profundidade real
+6. **Active state é essencial**: Feedback visual de "pressionado" aumenta percepção de qualidade
+7. **Transições rápidas**: `duration-200` é mais responsivo que durações maiores
+8. **Transform 3D real**: `perspective` + `rotateX` cria ilusão de profundidade verdadeira
+
+### Status
+✅ **Implementado e funcionando perfeitamente**  
+✅ **Aplicado em todos os CTAs principais**  
+✅ **Visual 3D premium com cores douradas da marca**  
+
+---
+
 # 💆 Projeto: Leli Morgado Massoterapeuta
 
 ## Sobre o Projeto

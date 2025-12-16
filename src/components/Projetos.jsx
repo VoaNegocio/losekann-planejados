@@ -11,14 +11,21 @@ function Projetos() {
   const projetosPorAmbiente = {
     dormitorio: [
       { id: 1, src: '/projetos/dormitorio/dormitorio1.jpg', alt: 'Dormitório 1' },
+      { id: 2, src: '/projetos/dormitorio/dormitorio2.jpg', alt: 'Dormitório 2' },
+      { id: 3, src: '/projetos/dormitorio/dormitorio3.jpg', alt: 'Dormitório 3' },
+      { id: 4, src: '/projetos/dormitorio/dormitorio4.jpg', alt: 'Dormitório 4' },
     ],
     cozinha: [
       { id: 1, src: '/projetos/cozinha/cozinha1.jpg', alt: 'Cozinha 1' },
       { id: 2, src: '/projetos/cozinha/cozinha2.jpg', alt: 'Cozinha 2' },
       { id: 3, src: '/projetos/cozinha/cozinha3.jpg', alt: 'Cozinha 3' },
+      { id: 4, src: '/projetos/cozinha/cozinha4.png', alt: 'Cozinha 4' },
     ],
     banheiro: [
       { id: 1, src: '/projetos/banheiro/banheiro1.jpg', alt: 'Banheiro 1' },
+      { id: 2, src: '/projetos/banheiro/banheiro2.png', alt: 'Banheiro 2' },
+      { id: 3, src: '/projetos/banheiro/banheiro3.png', alt: 'Banheiro 3' },
+      { id: 4, src: '/projetos/banheiro/banheiro4.png', alt: 'Banheiro 4' },
     ],
   }
 
@@ -97,14 +104,18 @@ function Projetos() {
           ))}
         </div>
 
-        {/* CTA Discreto */}
+        {/* CTA Premium 3D */}
         <div className="text-center">
           <button
             onClick={handleCTAClick}
-            className="inline-flex items-center gap-2 text-losekann-dourado hover:text-losekann-dourado-hover font-semibold text-lg transition-colors"
+            className="group btn-3d-premium inline-flex items-center gap-3 bg-losekann-dourado hover:bg-losekann-dourado-hover text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-semibold text-base md:text-lg relative overflow-hidden animate-pulse-slow"
           >
-            <FiArrowRight className="w-5 h-5" />
-            <span>Quero um projeto assim</span>
+            {/* Shimmer effect */}
+            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 animate-shimmer"></span>
+            {/* Glow effect */}
+            <span className="absolute inset-0 bg-gradient-to-r from-losekann-dourado/0 via-losekann-dourado/50 to-losekann-dourado/0 opacity-60 group-hover:opacity-100 transition-opacity duration-500 blur-2xl animate-pulse"></span>
+            <FiArrowRight className="relative z-10 w-5 h-5" />
+            <span className="relative z-10">Quero um projeto assim</span>
           </button>
         </div>
       </div>

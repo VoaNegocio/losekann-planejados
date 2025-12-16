@@ -68,17 +68,30 @@ function CTAFinal() {
             </div>
 
             {/* Mapa */}
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-neutral-200/50">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-neutral-200/50 cursor-pointer group hover:shadow-xl transition-all duration-300 relative">
               <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3658.1234567890123!2d-46.31123456789012!3d-23.54321098765432!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMjPCsDMyJzM1LjYiUyA0NsKwMTgnNDAuNCJX!5e0!3m2!1spt-BR!2sbr!4v1234567890123!5m2!1spt-BR!2sbr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.6991145216316!2d-46.314519000000004!3d-23.543322!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce7b631a8dec4f%3A0xdd0cc706f7aa7dc1!2sLosekann%20M%C3%B3veis%20Planejados!5e0!3m2!1spt-BR!2sbr!4v1765900703262!5m2!1spt-BR!2sbr"
                 width="100%"
                 height="300"
-                style={{ border: 0 }}
+                style={{ border: 0, pointerEvents: 'none' }}
                 allowFullScreen=""
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
                 title="Localização Losekann Planejados"
               ></iframe>
+              {/* Overlay clicável que cobre todo o mapa */}
+              <a
+                href="https://www.google.com/maps/place/Losekann+M%C3%B3veis+Planejados/@-23.543322,-46.314519,17z/data=!3m1!4b1!4m6!3m5!1s0x94ce7b631a8dec4f:0xdd0cc706f7aa7dc1!8m2!3d-23.543322!4d-46.314519!16s%2Fg%2F11c5q8v5qj?entry=ttu"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="absolute inset-0 z-10 flex items-center justify-center bg-black/0 group-hover:bg-black/5 transition-colors duration-300"
+                aria-label="Abrir localização no Google Maps"
+              >
+                {/* Mensagem no hover */}
+                <div className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-white/90 backdrop-blur-sm px-4 py-2 rounded-lg pointer-events-none">
+                  <p className="text-sm font-medium text-losekann-preto">Clique para abrir no Google Maps</p>
+                </div>
+              </a>
             </div>
           </div>
         </div>

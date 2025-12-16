@@ -13,6 +13,7 @@ function Autoridade() {
     { id: 4, src: '/projeto4.jpg', alt: 'Projeto Losekann 4' },
     { id: 5, src: '/projeto5.jpg', alt: 'Projeto Losekann 5' },
     { id: 6, src: '/projeto6.jpg', alt: 'Projeto Losekann 6' },
+    { id: 7, src: '/projeto7.jpg', alt: 'Projeto Losekann 7' },
   ]
 
   const handleImageClick = (projeto) => {

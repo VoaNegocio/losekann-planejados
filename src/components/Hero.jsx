@@ -15,8 +15,14 @@ function Hero() {
   }
 
   return (
-    <section id="hero" className="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-b from-white via-neutral-50/30 to-white">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="hero" className="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-b from-white via-neutral-50/50 to-white relative overflow-hidden">
+      {/* Elementos decorativos sutis - profundidade visual */}
+      <div className="absolute inset-0 pointer-events-none opacity-40">
+        <div className="absolute top-20 right-20 w-96 h-96 bg-losekann-dourado/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-20 w-80 h-80 bg-losekann-dourado/3 rounded-full blur-3xl"></div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Conteúdo Texto */}
           <div className="space-y-6 md:space-y-8 order-1 md:order-1">

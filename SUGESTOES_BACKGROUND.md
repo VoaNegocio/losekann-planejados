@@ -1,5 +1,105 @@
 # 🎨 Sugestões de Background - Landing Page Losekann
 
+## Seção Hero
+
+### Contexto
+Esta é a **primeira seção** da landing page - a primeira impressão do visitante. Precisa criar impacto imediato e destacar o conteúdo (headline, subheadline, CTA e imagem).
+
+### Opções Recomendadas
+
+#### Opção A: Gradiente Sutil com Elementos Decorativos (⭐ RECOMENDADA)
+**Visual:** Elegante, premium, com profundidade sutil
+
+```jsx
+bg-gradient-to-b from-white via-neutral-50/50 to-white relative overflow-hidden
+// Com elementos decorativos dourados muito sutis
+```
+
+**Implementação:**
+```jsx
+<section className="pt-24 md:pt-32 pb-16 md:pb-24 bg-gradient-to-b from-white via-neutral-50/50 to-white relative overflow-hidden">
+  {/* Elementos decorativos sutis */}
+  <div className="absolute inset-0 pointer-events-none opacity-40">
+    <div className="absolute top-20 right-20 w-96 h-96 bg-losekann-dourado/5 rounded-full blur-3xl"></div>
+    <div className="absolute bottom-20 left-20 w-80 h-80 bg-losekann-dourado/3 rounded-full blur-3xl"></div>
+  </div>
+  
+  <div className="container mx-auto px-4 md:px-8 relative z-10">
+    {/* Conteúdo */}
+  </div>
+</section>
+```
+
+**Vantagens:**
+- ✅ Cria profundidade sem competir com a imagem
+- ✅ Elementos dourados sutis alinham com identidade
+- ✅ Mantém foco no conteúdo
+- ✅ Visual premium e sofisticado
+
+---
+
+#### Opção B: Fundo Branco Limpo com Padrão Geométrico Muito Sutil
+**Visual:** Minimalista e elegante
+
+```jsx
+bg-white relative overflow-hidden
+// Com padrão geométrico muito sutil (mais sutil que Autoridade)
+```
+
+**Vantagens:**
+- ✅ Máximo contraste com conteúdo
+- ✅ Visual limpo e profissional
+- ✅ Foco total no texto e imagem
+
+---
+
+#### Opção C: Gradiente Diagonal Suave
+**Visual:** Dinâmico mas elegante
+
+```jsx
+bg-gradient-to-br from-white via-neutral-50/30 to-neutral-100
+```
+
+**Vantagens:**
+- ✅ Movimento visual sutil
+- ✅ Mantém elegância
+- ✅ Não sobrecarrega
+
+---
+
+#### Opção D: Fundo com Textura de Madeira Sutil (Temático)
+**Visual:** Conecta com o produto (móveis planejados)
+
+```jsx
+bg-neutral-50
+// Com overlay de textura de madeira muito sutil (opcional)
+```
+
+**Vantagens:**
+- ✅ Temático (conecta com móveis)
+- ✅ Visual único
+- ✅ Pode ser muito sutil para não competir
+
+---
+
+### Recomendação Principal
+
+**Opção A: Gradiente Sutil com Elementos Decorativos**
+
+Esta é a melhor opção porque:
+- ✅ **Primeira impressão premium**: Elementos decorativos criam profundidade visual
+- ✅ **Alinhamento com identidade**: Toques dourados muito sutis (#CCA147)
+- ✅ **Não compete com imagem**: Fundo sutil permite que imagem se destaque
+- ✅ **Hierarquia visual**: Cria camadas (fundo → elementos decorativos → conteúdo)
+- ✅ **Elegância**: Visual sofisticado que transmite qualidade
+
+**Intensidade dos elementos:**
+- Opacidade baixa (40%) para não competir
+- Blur intenso (`blur-3xl`) para suavidade
+- Cores douradas muito sutis (5% e 3% de opacidade)
+
+---
+
 ## Seção Depoimentos
 
 ## Opções de Design Premium
