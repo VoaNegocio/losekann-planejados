@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { getWhatsAppUrl } from '../config/whatsapp'
 import ImageModal from './ImageModal'
+import { FiArrowRight } from 'react-icons/fi'
 
 function Hero() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -18,7 +19,7 @@ function Hero() {
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Conteúdo Texto */}
-          <div className="space-y-6 md:space-y-8">
+          <div className="space-y-6 md:space-y-8 order-1 md:order-1">
             {/* Headline */}
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-losekann-preto leading-tight font-display">
               Planejados sob medida, entregues em até{' '}
@@ -30,20 +31,24 @@ function Hero() {
               Há <span className="font-semibold text-losekann-dourado">28 anos</span> em Suzano, a Losekann Planejados desenvolve projetos exclusivos com padrão, prazo e acompanhamento do início ao fim.
             </p>
 
-            {/* CTA */}
-            <div className="pt-4">
+            {/* CTA Desktop - Visível apenas no desktop */}
+            <div className="pt-4 hidden md:block">
               <button
                 onClick={handleCTAClick}
-                className="group inline-flex items-center gap-3 bg-losekann-dourado hover:bg-losekann-dourado-hover text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-semibold text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
+                className="group btn-3d-premium inline-flex items-center gap-3 bg-losekann-dourado hover:bg-losekann-dourado-hover text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-semibold text-base md:text-lg relative overflow-hidden animate-pulse-slow"
               >
-                <span>👉</span>
-                <span>Solicitar orçamento personalizado</span>
+                {/* Shimmer effect */}
+                <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 animate-shimmer"></span>
+                {/* Glow effect */}
+                <span className="absolute inset-0 bg-gradient-to-r from-losekann-dourado/0 via-losekann-dourado/50 to-losekann-dourado/0 opacity-60 group-hover:opacity-100 transition-opacity duration-500 blur-2xl animate-pulse"></span>
+                <FiArrowRight className="relative z-10 w-5 h-5" />
+                <span className="relative z-10">Solicitar orçamento personalizado</span>
               </button>
             </div>
           </div>
 
           {/* Imagem */}
-          <div className="relative">
+          <div className="relative order-2 md:order-2">
             <div
               className="aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl cursor-pointer group"
               onClick={handleImageClick}
@@ -61,6 +66,21 @@ function Hero() {
                 </div>
               </div>
             </div>
+          </div>
+
+          {/* CTA Mobile - Visível apenas no mobile, abaixo da imagem */}
+          <div className="pt-4 md:hidden order-3">
+            <button
+              onClick={handleCTAClick}
+              className="group btn-3d-premium w-full inline-flex items-center justify-center gap-3 bg-losekann-dourado hover:bg-losekann-dourado-hover text-white px-8 py-4 rounded-xl font-semibold text-base relative overflow-hidden animate-pulse-slow"
+            >
+              {/* Shimmer effect */}
+              <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 animate-shimmer"></span>
+              {/* Glow effect */}
+              <span className="absolute inset-0 bg-gradient-to-r from-losekann-dourado/0 via-losekann-dourado/50 to-losekann-dourado/0 opacity-60 group-hover:opacity-100 transition-opacity duration-500 blur-2xl animate-pulse"></span>
+              <FiArrowRight className="relative z-10 w-5 h-5" />
+              <span className="relative z-10">Solicitar orçamento personalizado</span>
+            </button>
           </div>
         </div>
       </div>

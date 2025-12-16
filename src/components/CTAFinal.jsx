@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { getWhatsAppUrl } from '../config/whatsapp'
 import ImageModal from './ImageModal'
+import { FiArrowRight } from 'react-icons/fi'
 
 function CTAFinal() {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -86,10 +87,14 @@ function CTAFinal() {
         <div className="text-center">
           <button
             onClick={handleCTAClick}
-            className="group inline-flex items-center gap-3 bg-losekann-dourado hover:bg-losekann-dourado-hover text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-semibold text-base md:text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 animate-pulse-slow"
+            className="group btn-3d-premium inline-flex items-center gap-3 bg-losekann-dourado hover:bg-losekann-dourado-hover text-white px-8 md:px-10 py-4 md:py-5 rounded-xl font-semibold text-base md:text-lg relative overflow-hidden animate-pulse-slow"
           >
-            <span>👉</span>
-            <span>Agendar visita ao showroom</span>
+            {/* Shimmer effect */}
+            <span className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/30 to-white/0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 animate-shimmer"></span>
+            {/* Glow effect */}
+            <span className="absolute inset-0 bg-gradient-to-r from-losekann-dourado/0 via-losekann-dourado/50 to-losekann-dourado/0 opacity-60 group-hover:opacity-100 transition-opacity duration-500 blur-2xl animate-pulse"></span>
+            <FiArrowRight className="relative z-10 w-5 h-5" />
+            <span className="relative z-10">Agendar visita ao showroom</span>
           </button>
         </div>
       </div>

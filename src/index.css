@@ -57,3 +57,44 @@ h1, h2, h3, h4, h5, h6 {
   display: none;  /* Chrome, Safari and Opera */
 }
 
+/* Botão 3D Premium - Efeito Persuasivo */
+.btn-3d-premium {
+  /* Sombras múltiplas para profundidade 3D */
+  box-shadow: 
+    0 8px 32px rgba(204, 161, 71, 0.5),  /* Glow dourado externo grande */
+    0 4px 16px rgba(204, 161, 71, 0.4),  /* Profundidade base */
+    inset 0 1px 0 rgba(255, 255, 255, 0.3),  /* Borda de luz superior */
+    inset 0 -1px 0 rgba(0, 0, 0, 0.2);  /* Borda de sombra inferior */
+  
+  /* Bordas 3D */
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  
+  /* Transform 3D */
+  transform-style: preserve-3d;
+  transition: all 200ms ease-out;
+}
+
+.btn-3d-premium:hover {
+  /* Elevação e rotação 3D no hover */
+  transform: perspective(1000px) rotateX(-2deg) translateY(-2px) scale(1.05);
+  
+  /* Sombras aumentadas no hover */
+  box-shadow: 
+    0 12px 48px rgba(204, 161, 71, 0.6),
+    0 6px 24px rgba(204, 161, 71, 0.5),
+    inset 0 1px 0 rgba(255, 255, 255, 0.4),
+    inset 0 -1px 0 rgba(0, 0, 0, 0.3);
+}
+
+.btn-3d-premium:active {
+  /* Compressão e movimento para baixo no active */
+  transform: perspective(1000px) rotateX(-1deg) translateY(2px) scale(0.96);
+  
+  /* Sombras reduzidas no active (botão se aproxima da superfície) */
+  box-shadow: 
+    0 4px 16px rgba(204, 161, 71, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2),
+    inset 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+

@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { getWhatsAppUrl } from '../config/whatsapp'
 import ImageModal from './ImageModal'
+import { FiArrowRight } from 'react-icons/fi'
 
 function Projetos() {
   const [ambienteSelecionado, setAmbienteSelecionado] = useState('dormitorio')
@@ -102,7 +103,7 @@ function Projetos() {
             onClick={handleCTAClick}
             className="inline-flex items-center gap-2 text-losekann-dourado hover:text-losekann-dourado-hover font-semibold text-lg transition-colors"
           >
-            <span>👉</span>
+            <FiArrowRight className="w-5 h-5" />
             <span>Quero um projeto assim</span>
           </button>
         </div>

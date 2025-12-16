@@ -29,8 +29,20 @@ function Autoridade() {
   }
 
   return (
-    <section id="autoridade" className="py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 md:px-8">
+    <section id="autoridade" className="py-16 md:py-24 bg-neutral-50 relative overflow-hidden">
+      {/* Padrão geométrico sutil - alinhado com conceito de "planejados" */}
+      <div className="absolute inset-0 pointer-events-none opacity-30">
+        <div
+          className="absolute top-0 left-0 w-full h-full"
+          style={{
+            backgroundImage:
+              'linear-gradient(45deg, transparent 30%, rgba(204, 161, 71, 0.03) 30%, rgba(204, 161, 71, 0.03) 50%, transparent 50%, transparent 80%, rgba(204, 161, 71, 0.03) 80%, rgba(204, 161, 71, 0.03) 100%)',
+            backgroundSize: '60px 60px',
+          }}
+        ></div>
+      </div>
+
+      <div className="container mx-auto px-4 md:px-8 relative z-10">
         {/* Headline */}
         <div className="text-center mb-12 md:mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-losekann-preto mb-4 font-display">
